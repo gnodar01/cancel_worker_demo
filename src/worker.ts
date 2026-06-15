@@ -14,12 +14,12 @@ const api = {
   async do_work(cb: ProgressCallback, cancelToken: Token): Promise<string> {
     const steps = 1000;
     for (let i = 1; i <= steps; i++) {
+      // Pretend to do a chunk of expensive work.
+      await new Promise((resolve) => setTimeout(resolve, 500));
+
       // Poll the shared token. If main has signaled, this throws
       // TaskCancelledError, which Comlink propagates back to the caller.
       CancelSource.throwIfSignaled(cancelToken);
-
-      // Pretend to do a chunk of expensive work.
-      await new Promise((resolve) => setTimeout(resolve, 5));
       cb(i / steps);
     }
     return 'done';

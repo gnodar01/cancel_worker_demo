@@ -33,7 +33,7 @@ doWorkBtn.addEventListener('click', async () => {
   } catch (err) {
     // instanceof won't survive Comlink's error serialization — match by name.
     if (err instanceof Error && err.name === 'TaskCancelledError') {
-      progressEl.textContent = 'Cancelled ❌';
+      progressEl.textContent = `Cancelled ❌ at ${progressEl.textContent}`;
     } else {
       throw err;
     }
