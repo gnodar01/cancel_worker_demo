@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comlink Worker Demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 480px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+      }
+      #progress {
+        margin-top: 1.5rem;
+        font-size: 1.25rem;
+        font-variant-numeric: tabular-nums;
+        min-height: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comlink Worker Demo</h1>
+    <button id="do-work">Do work</button>
+    <button id="cancel">Cancel</button>
+    <div id="progress">Idle</div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
