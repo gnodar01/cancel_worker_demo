@@ -63,3 +63,6 @@ public async Task DoSomeWork(CancellationToken ct)
 }
 ```
 
+I also found [this blog post](https://webjose.hashnode.dev/finally-cancel-web-workers-work-without-terminating-the-worker) and associated [npm package](https://github.com/WJSoftware/wjfe-async-workers) helpful as reference.
+It's probably not the right abstraction over Comlink though, and does a bunch more than we want.
+
